@@ -15,6 +15,19 @@ A lightweight and efficient Telegram bot built with `aiogram` for monitoring mul
     - Expired keys > 10
     - Server is unreachable
 
+## ⚙️ Configuration
+
+Create a `config.py` file in the root directory with the following content:
+
+```python
+TELEGRAM_TOKEN = "your_bot_token_here"
+USERNAME = "your_xui_panel_login"
+PASSWORD = "your_xui_panel_password"
+ADMIN_IDS = ["your_telegram_user_id"]
+```
+
+> 🔐 **Important:** The same username and password must be used for all XUI panels added to the bot.
+
 ## 🚀 Getting Started with Docker
 
 1. **Build the Docker image:**
@@ -36,7 +49,7 @@ docker run -d --restart=always --name xui_monitor_bot xui-bot
 ```
 .
 ├── bot.py                  # Main entry point
-├── config.py               # Telegram token configuration
+├── config.py               # Bot token & XUI credentials
 ├── database.py             # SQLite helper functions
 ├── services/
 │   └── xui_api.py          # Interaction with 3x-ui API
@@ -49,14 +62,7 @@ docker run -d --restart=always --name xui_monitor_bot xui-bot
 └── monitor.py              # Background monitoring logic
 ```
 
-## ⚙️ Configuration
-
-Create a `config.py` file with the following content:
-
-```python
-TELEGRAM_TOKEN = "your_bot_token_here"
-```
-
 ## 📬 Feedback & Contributions
 
-Built with ❤️ for internal use. Feel free to open an issue or submit a pull request if you'd like to contribute or suggest improvements.
+Built with ❤️ for internal use.  
+Feel free to open an issue or submit a pull request if you'd like to contribute or suggest improvements.
